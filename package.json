@@ -20,6 +20,16 @@
     "release": "standard-version",
     "release:pre": "standard-version --prerelease"
   },
+  "binary": {
+    "module_name": "PaymoWinShutdownHandler",
+    "module_path": "./module/binding/napi{napi_build_version}",
+    "host": "https://paymo-node-addons-prebuilt.s3.amazonaws.com",
+    "remote_path": "./electron-shutdown-handler/v{version}",
+    "package_name": "{module_name}-v{version}-{platform}-{arch}-napi{napi_build_version}.tar.gz",
+    "napi_versions": [
+      6
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paymoapp/electron-shutdown-handler.git"

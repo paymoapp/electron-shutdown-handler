@@ -1,0 +1,101 @@
+{
+  "name": "@paymoapp/electron-shutdown-handler",
+  "version": "0.1.0",
+  "description": "Handle shutdown messages on windows in your electron app and delay system shutdown",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-pre-gyp install --fallback-to-build",
+    "clean": "node-pre-gyp clean && rimraf dist",
+    "build": "npm run clean && npm run build:ts && npm run build:gyp",
+    "build:ts": "tsc --project tsconfig.build.json",
+    "build:gyp": "node-pre-gyp configure build",
+    "publish:bindings": "node-pre-gyp package publish",
+    "typecheck": "tsc --noEmit",
+    "lint": "esw --color --ext .ts src demo",
+    "lint:fix": "esw --color --fix --ext .ts src demo",
+    "lint:watch": "esw --color --fix --watch --cache --ext .ts src demo",
+    "format": "prettier --write src demo",
+    "generate:readme-toc": "markdown-toc -i --bullets=\"-\" --maxdepth=4 README.md",
+    "release": "standard-version",
+    "release:pre": "standard-version --prerelease"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paymoapp/electron-shutdown-handler.git"
+  },
+  "keywords": [
+    "electron",
+    "windows",
+    "shutdown",
+    "delay"
+  ],
+  "author": "Paymo LLC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/paymoapp/electron-shutdown-handler/issues"
+  },
+  "homepage": "https://github.com/paymoapp/electron-shutdown-handler#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "aws-sdk": "^2.1208.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-watch": "^8.0.0",
+    "markdown-toc": "^1.2.0",
+    "node-gyp": "^9.1.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.9",
+    "node-addon-api": "^5.0.0"
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "git fetch --all --tags"
+    },
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "imp",
+        "section": "Improvements"
+      },
+      {
+        "type": "ci",
+        "section": "Build/CI"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "section": "Documentation"
+      },
+      {
+        "type": "refactor",
+        "section": "Refactor"
+      },
+      {
+        "type": "test",
+        "section": "Testing"
+      }
+    ]
+  }
+
+}

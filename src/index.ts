@@ -1,7 +1,4 @@
-import path from 'path';
 import { EventEmitter } from 'node:events';
-
-import binary from '@mapbox/node-pre-gyp';
 
 import { Addon } from './types';
 
@@ -10,10 +7,7 @@ const SUPPORTED_PLATFORMS = ['win32'];
 let addon: Addon | null = null;
 
 if (SUPPORTED_PLATFORMS.includes(process.platform)) {
-	const bindingPath = binary.find(
-		path.resolve(path.join(__dirname, '..', 'package.json'))
-	);
-	addon = require(bindingPath); // eslint-disable-line import/no-dynamic-require
+	addon = require('../build/Release/PaymoWinShutdownHandler.node'); // eslint-disable-line import/no-dynamic-require
 }
 
 class ElectronShutdownHandlerClass extends EventEmitter {

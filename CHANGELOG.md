@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/paymoapp/electron-shutdown-handler/compare/v0.1.1...v1.0.0) (2022-09-05)
+
+
+### Documentation
+
+* Added documentation ([c814279](https://github.com/paymoapp/electron-shutdown-handler/commit/c814279841b863c9fc07f02796a451a1102b746b))
+
 ### 0.1.1 (2022-09-05)
 
 

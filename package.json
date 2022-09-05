@@ -1,6 +1,6 @@
 {
   "name": "@paymoapp/electron-shutdown-handler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Handle shutdown messages on windows in your electron app and delay system shutdown",
   "main": "dist/index.js",
   "scripts": {

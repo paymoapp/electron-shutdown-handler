@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-pre-gyp install --fallback-to-build",
+    "install": "run-script-os",
+    "install:win32": "node-pre-gyp install --fallback-to-build",
+    "install:default": "echo \"No native addon required\"",
     "demo": "electron ./demo/electron.js --no-sandbox",
     "clean": "node-pre-gyp clean && rimraf dist",
     "build": "npm run clean && npm run build:ts && npm run build:gyp",
@@ -13,10 +15,10 @@
     "build:gyp": "node-pre-gyp configure build",
     "publish:bindings": "node-pre-gyp package publish",
     "typecheck": "tsc --noEmit",
-    "lint": "esw --color --ext .ts src demo",
-    "lint:fix": "esw --color --fix --ext .ts src demo",
-    "lint:watch": "esw --color --fix --watch --cache --ext .ts src demo",
-    "format": "prettier --write src demo",
+    "lint": "esw --color --ext .ts src",
+    "lint:fix": "esw --color --fix --ext .ts src",
+    "lint:watch": "esw --color --fix --watch --cache --ext .ts src",
+    "format": "prettier --write src",
     "generate:readme-toc": "markdown-toc -i --bullets=\"-\" --maxdepth=4 README.md",
     "release": "standard-version",
     "release:pre": "standard-version --prerelease"
@@ -68,7 +70,8 @@
   },
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.9",
-    "node-addon-api": "^5.0.0"
+    "node-addon-api": "^5.0.0",
+    "run-script-os": "^1.1.6"
   },
   "standard-version": {
     "scripts": {

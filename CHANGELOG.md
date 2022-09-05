@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.0...v1.0.1) (2022-09-05)
+
+
+### Build/CI
+
+* Migrate to prebuild from node-pre-gyp ([c268174](https://github.com/paymoapp/electron-shutdown-handler/commit/c268174d20d3fd1db673d4144cc5556784683cbe))
+
 ## [1.0.0](https://github.com/paymoapp/electron-shutdown-handler/compare/v0.1.1...v1.0.0) (2022-09-05)
 
 

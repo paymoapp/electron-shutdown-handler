@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node-pre-gyp install --fallback-to-build",
+    "demo": "electron ./demo/electron.js --no-sandbox",
     "clean": "node-pre-gyp clean && rimraf dist",
     "build": "npm run clean && npm run build:ts && npm run build:gyp",
-    "build:ts": "tsc --project tsconfig.build.json",
+    "build:ts": "tsc",
     "build:gyp": "node-pre-gyp configure build",
     "publish:bindings": "node-pre-gyp package publish",
     "typecheck": "tsc --noEmit",
@@ -52,6 +53,7 @@
     "@typescript-eslint/parser": "^5.36.1",
     "aws-sdk": "^2.1208.0",
     "cross-env": "^7.0.3",
+    "electron": "^20.1.1",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -107,5 +109,4 @@
       }
     ]
   }
-
 }

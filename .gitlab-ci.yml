@@ -1,6 +1,7 @@
 variables:
   TEST_IMAGE: "node:14-alpine"
   BUILD_IMAGE: "gitlab.paymoapp.com:5555/envscripts/img-ubuntu-base"
+  GIT_DEPTH: 50
 
 # Mixins
 .only_any_v_tags:
@@ -53,8 +54,7 @@ build-addon-windows:
     - npm config set msvs_version 2022
     - npm ci --ignore-scripts
   script:
-    - npm run build:gyp
-    - npm run publish:bindings
+    - npm run prebuild -- --upload $PREBUILD_GH_TOKEN
   needs:
     - lint
     - typecheck

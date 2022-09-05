@@ -6,14 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "run-script-os",
-    "install:win32": "node-pre-gyp install --fallback-to-build",
+    "install:win32": "prebuild-install -r napi || node-gyp rebuild",
     "install:default": "echo \"No native addon required\"",
     "demo": "electron ./demo/electron.js --no-sandbox",
-    "clean": "node-pre-gyp clean && rimraf dist",
+    "clean": "node-gyp clean && rimraf dist",
     "build": "npm run clean && npm run build:ts && npm run build:gyp",
     "build:ts": "tsc",
-    "build:gyp": "node-pre-gyp configure build",
-    "publish:bindings": "node-pre-gyp package publish",
+    "build:gyp": "node-gyp configure build",
+    "prebuild": "prebuild --all -r napi --strip",
     "typecheck": "tsc --noEmit",
     "lint": "esw --color --ext .ts src",
     "lint:fix": "esw --color --fix --ext .ts src",
@@ -24,11 +24,6 @@
     "release:pre": "standard-version --prerelease"
   },
   "binary": {
-    "module_name": "PaymoWinShutdownHandler",
-    "module_path": "./module/binding/napi{napi_build_version}",
-    "host": "https://paymo-node-addons-prebuilt.s3.amazonaws.com",
-    "remote_path": "./electron-shutdown-handler/v{version}",
-    "package_name": "{module_name}-v{version}-{platform}-{arch}-napi{napi_build_version}.tar.gz",
     "napi_versions": [
       6
     ]
@@ -63,14 +58,15 @@
     "eslint-watch": "^8.0.0",
     "markdown-toc": "^1.2.0",
     "node-gyp": "^9.1.0",
+    "prebuild": "^11.0.4",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "standard-version": "^9.5.0",
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.9",
     "node-addon-api": "^5.0.0",
+    "prebuild-install": "^7.1.1",
     "run-script-os": "^1.1.6"
   },
   "standard-version": {

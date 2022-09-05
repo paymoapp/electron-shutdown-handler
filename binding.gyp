@@ -5,6 +5,7 @@
 			"conditions": [
 				["OS=='win'", {
 					"sources": [
+						"module/main.cpp",
 						"module/WinShutdownHandler.cpp"
 					],
 					"libraries": [

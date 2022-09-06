@@ -51,7 +51,7 @@ build-addon-windows:
   tags:
     - win
   before_script:
-    - npm config set msvs_version 2022
+    - npm config set msvs_version 2019
     - npm ci --ignore-scripts
   script:
     - npm run prebuild -- --upload $PREBUILD_GH_TOKEN

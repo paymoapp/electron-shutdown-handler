@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.3...v1.0.4) (2022-09-06)
+
+
+### Bug Fixes
+
+* **addon:** Call javascript callback on QueryEndSession instead of EndSession ([92d435b](https://github.com/paymoapp/electron-shutdown-handler/commit/92d435b37b99b64f80bc29591c3eab9c44e0fe10))
+
 ### [1.0.3](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.2...v1.0.3) (2022-09-06)
 
 

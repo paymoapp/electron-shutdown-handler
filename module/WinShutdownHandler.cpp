@@ -29,6 +29,7 @@ namespace PaymoWinShutdownHandler {
 		}
 
 		mainWindow = *info[0].As<Napi::Buffer<HWND>>().Data();
+		SetProcessShutdownParameters(0x3FF, 0);
 	}
 
 	Napi::Boolean insertWndProcHook(const Napi::CallbackInfo& info) {

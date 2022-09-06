@@ -117,20 +117,15 @@ namespace PaymoWinShutdownHandler {
 
 	LRESULT CALLBACK WindowProcCb(HWND hWindow, UINT event, WPARAM wParam, LPARAM lParam) {
 		if (event == WM_QUERYENDSESSION) {
+			tsfn.BlockingCall([](Napi::Env env, Napi::Function jsCallback) {
+				jsCallback.Call({});
+			});
+
 			if (shouldBlockShutdown) {
 				return FALSE;
 			}
 
 			return TRUE;
-		}
-		else if (event == WM_ENDSESSION) {
-			if (wParam == TRUE) {
-				tsfn.BlockingCall([](Napi::Env env, Napi::Function jsCallback) {
-					jsCallback.Call({});
-				});
-
-				return 0;
-			}
 		}
 
 		return CallWindowProc(prevWndProc, hWindow, event, wParam, lParam);

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.6...v1.0.7) (2022-09-06)
+
+
+### Bug Fixes
+
+* **addon:** Shut the main thread down first, so we will not get errors because the renderer process already exited ([0079193](https://github.com/paymoapp/electron-shutdown-handler/commit/007919342d41837ed09f492d81f348be03f0234c))
+
+
+### Improvements
+
+* **demo:** Better demo ([672f687](https://github.com/paymoapp/electron-shutdown-handler/commit/672f6874f48dd3d938ab028feb0c6287267bac77))
+
+
+### Documentation
+
+* Updated docs ([3cd964e](https://github.com/paymoapp/electron-shutdown-handler/commit/3cd964ebe458b962e4d604c8659699318eb12b7e))
+
 ### [1.0.6](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.5...v1.0.6) (2022-09-06)
 
 

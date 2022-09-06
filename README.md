@@ -58,14 +58,26 @@ app.whenReady().then(() => {
 	win.loadFile('index.html');
 
 	ElectronShutdownHandler.setWindowHandle(win.getNativeWindowHandle());
+	ElectronShutdownHandler.blockShutdown('Please wait for some data to be saved');
 
 	Electron.ShutdownHandler.on('shutdown', () => {
-		console.log('Shutting down!')
+		console.log('Shutting down!');
+		ElectronShutdownHandler.releaseShutdown();
 		win.webContents.send('shutdown');
 		app.quit();
 	});
 });
 ```
+
+#### Usage
+
+First of all you need to create an electron window, after which you can call the `setWindowHandle` method. Calling this method is required, otherwise the rest of the functions will throw. This function will store the HWND of the window in the addon and will set that the window will be the first process to shut down (otherwise the renderer process might exit first which results in the crash of electron).
+
+To block the shutdown you need to call the `blockShutdown` function before a shutdown event occures, but you also need to set up an event listener, otherwise the hook won't be added to the window message callback.
+
+You should also call app.quit() in the shutdown handler.
+
+Please note that this addon is singleton, you can only use it for one window at the moment, so you should always set the main window's handle.
 
 ## API
 

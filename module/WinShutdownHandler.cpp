@@ -127,6 +127,11 @@ namespace PaymoWinShutdownHandler {
 
 			return TRUE;
 		}
+		else if (event == WM_ENDSESSION) {
+			if (wParam == FALSE) {
+				return 0;
+			}
+		}
 
 		return CallWindowProc(prevWndProc, hWindow, event, wParam, lParam);
 	}

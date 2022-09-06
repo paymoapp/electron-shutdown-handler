@@ -15,6 +15,7 @@ NodeJS library using native modules to capture the shutdown events on Windows in
     - [Installation](#installation)
     - [Native addon](#native-addon)
     - [Example](#example)
+    - [Usage](#usage)
 - [API](#api)
     - [Functions](#functions)
     - [Events](#events)

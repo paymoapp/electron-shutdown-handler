@@ -5,9 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "run-script-os",
+    "install": "node install.js",
     "install:win32": "prebuild-install -r napi || node-gyp rebuild",
-    "install:default": "echo \"No native addon required\"",
     "demo": "node_modules\\electron\\dist\\electron.exe demo/electron.js --no-sandbox",
     "clean": "node-gyp clean && rimraf dist",
     "build": "npm run clean && npm run build:ts && npm run build:gyp",
@@ -28,6 +27,12 @@
       6
     ]
   },
+  "files": [
+    "binding.gyp",
+    "install.js",
+    "dist/",
+    "module/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paymoapp/electron-shutdown-handler.git"
@@ -64,8 +69,7 @@
   },
   "dependencies": {
     "node-addon-api": "^5.0.0",
-    "prebuild-install": "^7.1.1",
-    "run-script-os": "^1.1.6"
+    "prebuild-install": "^7.1.1"
   },
   "standard-version": {
     "scripts": {

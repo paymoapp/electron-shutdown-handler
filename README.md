@@ -61,7 +61,7 @@ app.whenReady().then(() => {
 	ElectronShutdownHandler.setWindowHandle(win.getNativeWindowHandle());
 	ElectronShutdownHandler.blockShutdown('Please wait for some data to be saved');
 
-	Electron.ShutdownHandler.on('shutdown', () => {
+	ElectronShutdownHandler.on('shutdown', () => {
 		console.log('Shutting down!');
 		ElectronShutdownHandler.releaseShutdown();
 		win.webContents.send('shutdown');

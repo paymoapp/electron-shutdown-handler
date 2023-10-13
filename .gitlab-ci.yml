@@ -1,7 +1,6 @@
 variables:
-  TEST_IMAGE: "node:14-alpine"
-  BUILD_IMAGE: "gitlab.paymoapp.com:5555/envscripts/img-ubuntu-base"
   GIT_DEPTH: 50
+  MSVS_VERSION: 2019
 
 # Mixins
 .only_any_v_tags:
@@ -17,7 +16,6 @@ variables:
     - branches
 
 .job_test:
-  image: $TEST_IMAGE
   stage: test
   rules:
     - if: $CI_MERGE_REQUEST_ID
@@ -50,8 +48,10 @@ build-addon-windows:
   stage: build-addon
   tags:
     - win
+  hooks:
+    pre_get_sources_script:
+      - npm config --location=global set msvs_version $MSVS_VERSION
   before_script:
-    - npm config set msvs_version 2019
     - npm ci --ignore-scripts
   script:
     - npm run prebuild -- --upload $PREBUILD_GH_TOKEN
@@ -63,7 +63,6 @@ build-addon-windows:
 build-library:
   extends:
     - .only_any_v_tags
-  image: $BUILD_IMAGE
   stage: publish
   before_script:
     - npm ci --ignore-scripts

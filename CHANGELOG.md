@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.1.0...v1.1.1) (2024-05-23)
+
+
+### Build/CI
+
+* Added x32 prebuilt binaries for windows ([6e89b69](https://github.com/paymoapp/electron-shutdown-handler/commit/6e89b69252ab9de318f88d0ed236b751433197a5))
+
 ## [1.1.0](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.0.15...v1.1.0) (2024-05-23)
 
 

@@ -61,7 +61,7 @@
     "eslint-watch": "^8.0.0",
     "markdown-toc": "^1.2.0",
     "node-gyp": "^9.1.0",
-    "prebuild": "^11.0.4",
+    "prebuild": "^13.0.1",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "standard-version": "^9.5.0",
@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "node-addon-api": "^5.0.0",
-    "prebuild-install": "^7.1.1"
+    "prebuild-install": "^7.1.2"
   },
   "standard-version": {
     "scripts": {

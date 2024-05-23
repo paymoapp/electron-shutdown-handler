@@ -44,7 +44,7 @@
     "delay"
   ],
   "author": "Paymo LLC",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/paymoapp/electron-shutdown-handler/issues"
   },

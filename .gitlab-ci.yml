@@ -54,7 +54,8 @@ build-addon-windows:
   before_script:
     - npm ci --ignore-scripts
   script:
-    - npm run prebuild -- --upload $PREBUILD_GH_TOKEN
+    - npm run prebuild -- --arch x64 --upload $PREBUILD_GH_TOKEN
+    - npm run prebuild -- --arch ia32 --upload $PREBUILD_GH_TOKEN
   needs:
     - lint
     - typecheck

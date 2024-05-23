@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.1.1...v1.1.2) (2024-05-23)
+
+
+### Build/CI
+
+* Removed msvs_version and updated prebuild ([addd125](https://github.com/paymoapp/electron-shutdown-handler/commit/addd12584e5e3b083d71ca83188c7e977f0c1917))
+
 ### [1.1.1](https://github.com/paymoapp/electron-shutdown-handler/compare/v1.1.0...v1.1.1) (2024-05-23)
 
 
